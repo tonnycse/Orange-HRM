@@ -1,0 +1,390 @@
+Test Cases,,,,,,,,,,
+SL No.,Test Scenario ID,Test Case ID,Test Case Description,Precondition,Test Steps,Test Data,Actual Result,Expected Result,Status,Remarks
+1,TS_01 (Login Page),TC_01 (Login Page),Verify if a user can log in using valid username and valid password.,User on login page,"1. Open Chrome browser.
+2. Enter URL.
+3. Enter valid username.
+4. Enter valid password.
+5. Click ""Login"".","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Valid Username: Admin
+3. Valid Password: admin123",Logged in successfully,User should login successfully.,Passed,
+2,TS_01 (Login Page),TC_02 (Login Page),Verify if a user can log in using invalid username and valid password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Enter an invalid username
+4. Enter a valid password
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Invalid Username: admin
+3. Valid Password: admin123",Logged in successfully,"User will fail to log in and an error message: ""Invalid credentials"" will be displayed.",Failed,
+3,TS_01 (Login Page),TC_03 (Login Page),Verify if a user can log in using valid username and invalid password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Enter a valid username
+4. Enter an invalid password
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Valid Username: Admin
+3. Valid Password: admin12345","Login failed, and an error message ""Invalid credentials"" was displayed.","User will fail to log in and an error message: ""Invalid credentials"" will be displayed.",Passed,
+4,TS_01 (Login Page),TC_04 (Login Page),Verify if a user can log in using invalid username and invalid password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Enter an invalid username
+4. Enter an invalid password
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Valid Username: admin
+3. Valid Password: admin12345","Login failed, and an error message ""Invalid credentials"" was displayed.","User will fail to log in and an error message: ""Invalid credentials"" will be displayed.",Passed,
+5,TS_01 (Login Page),TC_05 (Login Page),Verify if a user can log in with valid username and blank password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Enter a valid username
+4. Leave the password field blank
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Valid Username: Admin
+","Login failed, and an error message ""Required"" was displayed below the Password field.","The Login button will be disabled, and a ""Required"" error message will appear below the Password field.",Passed,
+6,TS_01 (Login Page),TC_06 (Login Page),Verify if a user can log in with blank username and valid password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Leave the username field blank
+4. Enter a valid password
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Valid Password: admin123
+","Login failed, and an error message ""Required"" was displayed below the Username field.","The Login button will be disabled, and a ""Required"" error message will appear below the Username field.",Passed,
+7,TS_01 (Login Page),TC_07 (Login Page),Verify if a user can log in with invalid username and blank password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Enter an invalid username
+4. Leave the password field blank
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Invalid Username: admin
+","Login failed, and an error message ""Required"" was displayed below the Password field.","The Login button will be disabled, and a ""Required"" error message will appear below the Password field.",Passed,
+8,TS_01 (Login Page),TC_08 (Login Page),Verify if a user can log in with blank username and invalid password.,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Leave the username field blank
+4. Enter an invalid password
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Invalid Password: admin12345
+","Login failed, and an error message ""Required"" was displayed below the Username field.","The Login button will be disabled, and a ""Required"" error message will appear below the Username field.",Passed,
+9,TS_01 (Login Page),TC_09 (Login Page),Verify if a user can log in with blank username and blank password,User on login page,"1. Open Chrome browser
+2. Enter URL
+3. Leave the username field blank
+4. Leave the password field blank
+5. Click ""Login""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+","Login failed, and an error message ""Required"" was displayed below the Username & Password fields.","The Login button will be disabled, and a ""Required"" error message will appear below Username & Password fields.",Passed,
+10,TS_02 (Apply Leave),TC_10 (Apply Leave),Verify if a user can apply for leave with valid information,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Valid Date (From & To)
+8. Select Valid Duration
+9. Write Valid Comment
+10. Click on ""Apply""","1. Url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Leave Type: CAN-FMLA
+5. Date: 2024-29-11 
+6. Duration: Full Day
+7. Comments: Personal","A success message ""Successfully Saved"" appeared.","
+Leave application will be saved successfully, and the success message will be displayed.",Passed,
+11,TS_02 (Apply Leave),TC_11 (Apply Leave),Verify if a user can apply for leave with invalid date (From & To),User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Invalid Date (From & To)
+8. Select Valid Duration
+9. Write Valid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Leave Type: CAN-FMLA
+5. Date: 2024-12-06
+6. Duration: Full Day
+7. Comments: Personal","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+",Failed,System is accepting Leave Application for dates thats already gone.
+12,TS_02 (Apply Leave),TC_12 (Apply Leave),Verify if a user can apply for leave with invalid duration,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Valid Date (From & To)
+8. Select Invalid Duration 
+9. Write Valid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Leave Type: CAN-FMLA
+5. Date: 2024-29-11
+6. Duration: Half Day - Morning
+7. Comments: Personal","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+",Failed,System is accepting Leave Application for times thats already gone. Applied for 29 November Half Day - Morning Leave on 29 November Afternoon.
+13,TS_02 (Apply Leave),TC_13 (Apply Leave),Verify if a user can apply for leave with invalid comment,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Valid Date (From & To)
+8. Select Valid Duration
+9. Write Invalid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Date: 2024-03-12
+ 6. Duration: Full Day
+ 7. Comments: #%?","A success message ""Successfully Saved"" appeared.",The system should validate the input and restrict in case of submitting only numbers or only special characters like &&%.,Failed,"It's not clear that the comment section is mandatory or not. If the comment section is mandatory it's better not to accept only speacial character or numbers, instead of meaningful strings."
+14,TS_02 (Apply Leave),TC_14 (Apply Leave),Verify if a user can apply for leave with invalid 'Date (From & To)' and Invalid 'Duration' ,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Invalid Date (From & To)
+8. Select Invalid Duration (Select Specify Time)
+9. Write Valid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Date: 2024-15-11
+ 6. Duration: Select Specify Time (12AM -3AM)
+ 7. Comments: Personal","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+",Failed,System is accepting Leave Application for dates thats already gone and also time out of office hour. 
+15,TS_02 (Apply Leave),TC_15 (Apply Leave),Verify if a user can apply for leave with invalid 'Duration' and Invalid 'Comment' ,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Valid Date (From & To)
+8. Select Invalid Duration (Select Specify Time)
+9. Write Invalid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Date: 2024-30-12
+ 6. Duration: Select Specify Time (6PM -7PM)
+ 7. Comments: ???","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+
+
+""",Failed,
+16,TS_02 (Apply Leave),TC_16 (Apply Leave),Verify if a user can apply for leave with invalid 'Date' and Invalid 'Comment' ,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Invalid Date (From & To)
+8. Select Valid Duration 
+9. Write Invalid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Date: 2024-05-11
+ 6. Duration: Full Day
+ 7. Comments: ???","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+
+
+",Failed,
+17,TS_02 (Apply Leave),TC_17 (Apply Leave),"Verify if a user can apply for leave with invalid 'Date', Invalid 'Duration' and Invalid 'Comment' ",User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Invalid Date (From & To)
+8. Select Invalid Duration 
+9. Write Invalid Comment
+10. Click 'Apply'","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Date: 2024-08-12
+ 6. Duration: Select Specify Time (5PM -10PM)
+ 7. Comments: @#$%","A warning message ""Failed to Submit, No Working Days Selected"" appeared. ","Leave application submission will be failed, and a warning message will be displayed. 
+
+
+",Passed,
+18,TS_02 (Apply Leave),TC_18 (Apply Leave),Verify if a user can apply for leave without selecting 'Leave Type' ,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Valid Date
+7. Select Valid Duration
+8. Write valid Comment
+9. Click 'Apply'
+","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Date: 2024-02-12
+ 5. Duration: Full Day
+ 6. Comments: Personal
+","A warning message ""Required"" appeared under the ""Leave Type"" field. ",Clicking the Apply button should display alerts under blank field and prevent form submission.,Passed,
+19,TS_02 (Apply Leave),TC_19 (Apply Leave),Verify if a user can apply for leave without selecting 'Date (From & To)'.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Write valid Comment
+8. Click 'Apply'
+
+","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Comments: Personal
+
+","A warning message ""Required"" appeared under the ""Date (From & To)"" fields. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+20,TS_02 (Apply Leave),TC_20 (Apply Leave),Verify if a user can apply for leave while keeping comment box blank.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Valid Date (From & To)
+8. Select Valid Duration 
+9. Click 'Apply'
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Leave Type: CAN-FMLA
+5. Date: 2024-02-12
+6. Duration: Full Day
+","A success message ""Successfully Saved"" appeared.","
+Leave application will be saved successfully, and the success message will be displayed.",Failed,"Comment box is required or not isn't clear, but I still made a bug report"
+21,TS_02 (Apply Leave),TC_21 (Apply Leave),Verify if a user can apply for leave when all fields except 'Comment' are blank.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Write Valid Comment
+7. Click 'Apply'
+
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Comments: Personal
+","A warning message ""Required"" appeared under all required fields. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+22,TS_02 (Apply Leave),TC_22 (Apply Leave),Verify if a user can apply for leave when 'Leave Type' and 'Comment' are blank.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Valid Date
+7. Write Valid Duration
+8. Click 'Apply'
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Date: 2024-10-12
+5. Duration: Full Day
+
+","A warning message ""Required"" appeared under the ""Leave Type"" field. ",Clicking the Apply button should display alerts under blank field and prevent form submission.,Passed,
+23,TS_02 (Apply Leave),TC_23 (Apply Leave),Verify if a user can apply for leave when except 'Leave Type' every fields are blank.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Click 'Apply'
+
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Leave Type: CAN-FMLA
+
+
+","A warning message ""Required"" appeared under the ""Date"" fields. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+24,TS_02 (Apply Leave),TC_24 (Apply Leave),Verify if a user can apply for leave while keeping all fields blank.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Click on 'Apply' Button
+
+
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+
+
+
+","A warning message ""Required"" appeared under ""Leave Type"" and ""Date"" fields. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+25,TS_02 (Apply Leave),TC_25 (Apply Leave),"Verify if a user can apply for leave when ""Leave Type"" is blank & rest of the fields are filled with invalid information. ",User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Invalid Date (From & To)
+7. Select Invalid Duration
+8. Write Invalid Comment 
+9. Click 'Apply' 
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Date: 2024-01-12
+5. Duration: Select Specify Time (5PM -9PM)
+6. Comments: >?<
+","A warning message ""Required"" appeared under the ""Leave Type"" field. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+26,TS_02 (Apply Leave),TC_26 (Apply Leave),"Verify if a user can apply for leave when ""Date"" & ""Duration"" are blank & Comment is invalid. ",User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Write Invalid Comment 
+8. Click 'Apply' 
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Leave Type: CAN-FMLA
+5. Comments: %&%
+
+","A warning message ""Required"" appeared under the ""Date"" fields. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+27,TS_02 (Apply Leave),TC_27 (Apply Leave),"Verify if a user can apply for leave when ""Date"" & ""Duration"" are invalid & Comment is blank. ",User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type
+7. Select Invalid Date (From & To)
+8. Select Invalid Duration 
+9. Click 'Apply'
+","1. URL: https://opensource-demo.orangehrmlive.com
+ 2. Valid Username: Admin
+ 3. Valid Password: admin123
+ 4. Leave Type: CAN-FMLA
+ 5. Date: 2024-07-12
+ 6. Duration: Select Specify Time (5PM -1AM)
+","Two warning messages ""From time should be before to time"" & ""To time should be after from time"" appeared under the ""Duration (From & To)"" fields. ","Leave application submission will be failed, and a warning message will be displayed. 
+
+
+",Passed,
+28,TS_02 (Apply Leave),TC_28 (Apply Leave),Verify if a user can apply for leave when all fields except 'Comment' are blank and comment is invalid.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Write Invalid Comment
+7. Click 'Apply'
+
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Comments: <>
+","A warning message ""Required"" appeared under all required fields. ",Clicking the Apply button should display alerts under blank fields and prevent form submission.,Passed,
+29,TS_02 (Apply Leave),TC_29 (Apply Leave),Verify if a user can apply for leave when 'Leave Type' and 'Comment' are blank & Date and Duration are invalid.,User on apply leave page,"1. Open Chrome browser
+2. Enter URL
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Invalid Date
+7. Select Invalid Duration
+8. Click 'Apply'
+","1. URL: https://opensource-demo.orangehrmlive.com
+2. Valid Username: Admin
+3. Valid Password: admin123
+4. Date: 2024-01-12
+5. Duration: Specify Time(09:00 PM to 05:00 AM)
+
+","A warning message ""Required"" appeared under the ""Leave Type"" field. ",Clicking the Apply button should display alerts under blank field and prevent form submission.,Passed,

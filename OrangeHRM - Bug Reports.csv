@@ -1,0 +1,90 @@
+Bug Reports,,,,,,,,,,,
+SL No.,Test Case ID,Bug ID,Module,Summary,Steps to Reproduce,Actual Result,Expected Result,Severity,Priority,Environment,Attachments
+1,TC_02 (Login Page),BUG_01 (Login Page),Login Page,System allows login with an invalid username.,"1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Enter an invalid username: admin
+4. Enter a valid password: admin123
+5. Click ""Login""",User logged in successfully despite invalid username.,"User should fail to log in, and an error message: ""Invalid credentials"" should be displayed.",Major,P1,"Chrome, Windows 10",Video Link
+2,TC_11 (Apply Leave),BUG_02 (Apply Leave),Apply Leave,System accepts leave application with invalid date (Dates that are already gone),"1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Invalid Date: (2024-12-06)
+8. Select Valid Duration: Full Day
+9. Write Valid Comment: Personal
+10. Click 'Apply'","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+",Minor,P2,"Chrome, Windows 11",Video Link
+3,TC_12 (Apply Leave),BUG_03  (Apply Leave),Apply Leave,"System accepts leave application with invalid duration (Times that are already gone, Applied for 29 November Half Day - Morning Leave on 29 November Afternoon)","1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Valid Date: (2024-29-11)
+8. Select Invalid Duration: Half Day - Morning
+9. Write Valid Comment: Personal
+10. Click 'Apply'","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+",Minor,P2,"Chrome, Windows 12",
+4,TC_13 (Apply Leave),BUG_04 (Apply Leave),Apply Leave,System accepts leave application with invalid comment like only number & only speacial characters (This bug is acceptable only when the comment section is mandatory),"1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Valid Date: 2024-03-12
+8. Select Valid Duration: Full Day
+9. Write Invalid Comment: #%?
+10. Click 'Apply'","A success message ""Successfully Saved"" appeared.",The system should validate the input and restrict in case of submitting only numbers or only special characters like &&%.,Low,P3,"Chrome, Windows 13",Video Link
+5,TC_14 (Apply Leave),BUG_05 (Apply Leave),Apply Leave,System is accepting Leave Application for dates thats already gone and also time out of office hour,"1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Invalid Date: 2024-15-11
+8. Select Invalid Duration: Select Specify Time (12AM -3AM)
+9. Write Valid Comment: Personal
+10. Click 'Apply'","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+",Minor,P2,"Chrome, Windows 14",Video Link
+6,TC_15 (Apply Leave),BUG_06 (Apply Leave),Apply Leave,"System is accepting Leave Application with invalid 'Duration' and Invalid 'Comment' (Invalid duration is the only issue here, if comment isn't required)","1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Valid Date: 2024-30-12
+8. Select Invalid Duration: Select Specify Time (6PM -7PM)
+9. Write Invalid Comment: ???
+10. Click 'Apply'","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+
+
+""",Minor,"P2
+","Chrome, Windows 15",Video Link
+7,TC_16 (Apply Leave),BUG_07 (Apply Leave),Apply Leave,"System is accepting Leave Application with invalid 'Date' and Invalid 'Comment' (Invalid date is the only issue here, if comment isn't required)","1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Invalid Date: 2024-05-11
+8. Select Valid Duration: Full Day
+9. Write Invalid Comment: ???
+10. Click 'Apply'","A success message ""Successfully Saved"" appeared.","Leave application submission will be failed, and a warning message will be displayed. 
+
+
+",Minor,"P2
+","Chrome, Windows 15",Video Link
+8,TC_20 (Apply Leave),BUG_08 (Apply Leave),Apply Leave,System is accepting leave application with blank comment ,"1. Open Chrome browser
+2. Enter URL: https://opensource-demo.orangehrmlive.com
+3. Login to Orange HRM
+4. Go to Leave Menu
+5. Select Apply
+6. Select Leave Type: CAN-FMLA
+7. Select Valid Date: 2024-02-12
+8. Select Valid Duration: Full Day
+9. Click 'Apply'
+","A success message ""Successfully Saved"" appeared.","
+Leave application will be saved successfully, and the success message will be displayed.",Minor,"P2
+","Chrome, Windows 16",
